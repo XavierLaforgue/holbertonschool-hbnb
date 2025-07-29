@@ -1,0 +1,24 @@
+<header>
+  <nav>
+    <a href="{{ url_for('home') }}">
+      <div class="logo-div">
+        <img
+          src="{{ url_for('static', filename='images/logo.png') }}"
+          class="logo"
+          alt="logo"
+        />
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="{{ url_for('home') }}" id="home-link" class="home-button">
+        Home
+      </a>
+      <a href="{{ url_for('login') }}" id="login-link" class="login-button">
+        Login
+      </a>
+      <a href="{{ url_for('home') }}" id="logout-link" class="logout-button">
+        Logout
+      </a>
+    </div>
+  </nav>
+</header>
