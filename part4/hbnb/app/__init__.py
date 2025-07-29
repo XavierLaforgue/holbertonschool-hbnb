@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_restx import Api
 from flask_cors import CORS
 from flask_bcrypt import Bcrypt
@@ -30,6 +30,31 @@ def create_app(config_class="config.DevelopmentConfig"):
     bcrypt.init_app(app)
     jwt.init_app(app)
     db.init_app(app)
+
+    @app.route('/')
+    def home():
+        return render_template('index.html')
+
+    @app.route('/login')
+    def login():
+        return render_template('login.html')
+
+    @app.route('/place')
+    def place():
+        return render_template('place.html')
+    
+    @app.route('/places/<place_id>')
+    def place_by_id(place_id):
+        from app.services import facade
+        place = facade.get_place(place_id)
+        return render_template('place.html', place=place)
+
+    # @app.route('/places/<place_id>')
+    # def place(place_id):
+    #     from app.services import facade
+    #     place = facade.get_place(place_id)
+    #     return render_template('place.html', place=place)
+
 
     from app.api.v1.amenities import api as amenities_ns
     from app.api.v1.places import api as places_ns
