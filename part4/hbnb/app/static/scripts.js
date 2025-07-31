@@ -322,9 +322,9 @@ async function submitReview(token, text, rating, place_id) {
   }
 }
 
-function displayReviewForm(token) {
+async function displayReviewForm(token) {
   const addReviewSection = document.getElementById('add-review');
-  if (addReviewSection && token) {
+  if (addReviewSection && token && await isTokenValid(token)) {
     addReviewSection.style.display = 'block';
     const addReviewForm = document.getElementById('review-form');
     addReviewForm.addEventListener('submit', async (event) => {
