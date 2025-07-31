@@ -183,8 +183,8 @@ VALUES(
 	'Appartment of Test User',
 	'It is an OK place',
 	20,
-	0,
-	0,
+	49.179135542284534,
+	-0.3744749347549529,
 	'6fb5f1c1-f9d4-4987-aee3-16ab71704835'
 );
 
@@ -195,8 +195,8 @@ VALUES(
 	'Appartment of Second Test User',
 	'It is a bad place',
 	10,
-	0,
-	0,
+	48.9218997262811,
+	2.105578272985993,
 	'7414383a-c590-41aa-a4a5-02c11b8f2b17'
 );
 
