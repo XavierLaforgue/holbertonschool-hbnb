@@ -4,8 +4,8 @@ This repository has as objective to recreate ann Airbnb-like application.
 It will be composed of four parts:
 - Technical documentation (UML)
 - Business Logic and API
-- [current stage of development] Authentification and Database
-- Simple Web Client
+- Authentification and Database
+- [current stage of development] Simple Web Client
 
 ## Technical documentation
 This documentation will help understand the overall architecture, behavior and responsibilities of the system models, design of the business logic, and the interactions between the different application components.
@@ -44,6 +44,22 @@ Key Objectives:
 
 This part of the project will significantly enhance the application's security, scalability, and data integrity, making it ready for real-world scenarios.
 
-### Authors
-- [Delphine Coutouly-Laborda](https://github.com/Delphes1980)
+## Simple Web Client
+
+This part focuses on the devlopment of the application's front-end
+using HTML5, CSS3 and JavaScript ES6.
+This phase is dedicated to the design and implementation of an
+interactive user interface connecting with the back-end services
+developed in previous parts of the project.
+
+Key objectives:
+- User-friendly interface: Develop a user-friendly interface following
+  approppriate design specifications in concordance with the
+  application functionalities.
+- Client-side functionalities: Implement client-side functionality to interact with the back-end API.
+- Efficient data handling: Ensure secure and efficient data handling using JavaScript.
+- Modern dynamic we application: Apply modern web development practices to create a dynamic web application.
+
+## Authors
+- [Delphine Coutouly-Laborda](https://github.com/Delphes1980) (up to **Authentification and Database**)
 - [Xavier Laforgue](https://github.com/XavierLaforgue)

@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block title %}Place Details{% endblock %}
+{% block content %}
+<main>
+    <section id="place-details">
+        <!-- Place details will be populated dynamically -->
+        <h2>{{ place.title }}</h2>
+        <div id="place-info">
+            <div class="place-meta">
+                <span class="host"><b>Host:</b> {{ place.owner.first_name }} {{place.owner.last_name}}</span>
+                <!-- <br> -->
+                <span class="price"><b>Price:</b> {{ place.price }} €/night</span>
+            </div>
+            <section class="place-description">
+                <h3>Description</h3>
+                <p>{{ place.description }}</p>
+            </section>
+            <section class="Amenities">
+                <h3>Features</h3>
+                <ul class="features-list">
+                    {% if place.amenities|length > 0 %}
+                        {% for amenity in place.amenities %}
+                            <li>{{ amenity.name }}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li>Unknown</li>
+                    {% endif %}
+                </ul>
+            </section>
+        </div>
+    </section>
+    <section id="reviews">
+        <!-- Reviews will be populated dynamically -->
+        <h2>Reviews</h2>
+        <div class="reviews-list">
+            {% if place.reviews|length > 0 %}
+                {% for review in place.reviews %}
+                    <article class="review-card">
+                        <h3>{{ review.user.first_name }} {{ review.user.last_name }}:</h3>
+                        <p>{{ review.text }}</p>
+                        <span>Rating: {{ review.rating }} 
+                            <span class="rating">
+                                {{ '★' * review.rating }}{{ '☆' * (5 - review.rating) }}
+                            </span>
+                        </span>
+                    </article>
+                {% endfor %}
+            {% else %}
+                <article class="review-card">
+                    <p>Not reviewed yet</p>
+                    <!-- <span>Rating: ?
+                        <span class="rating">☆☆☆☆☆</span>
+                    </span> -->
+                </article>
+            {% endif %}
+            <!-- <article class="review-card">
+                <h3>Cozy, but isolated</h3>
+                <p>The cabin is nice, confy, it has all the necessary to have a lovely stay.
+                    However, it is so difficult to get to it!
+                    We got lost twice. The instructions were far from sufficient.
+                </p>
+                <span>Rating: 4 <span class="rating">★★★★☆</span></span>
+            </article> -->
+        </div>
+    </section>
+    <!-- If logged in -->
+    <section id="add-review">
+        <h2>Add a Review</h2>
+        <form id="review-form" data-place-id="{{ place.id }}">
+            <label for="rating">Rating:</label>
+                <select id="rating" name="rating" required>
+                    <!-- Options for rating -->
+                    <option value=1>1 ★☆☆☆☆</option>
+                    <option value=2>2 ★★☆☆☆</option>
+                    <option value=3>3 ★★★☆☆</option>
+                    <option value=4>4 ★★★★☆</option>
+                    <option value=5>5 ★★★★★</option>
+                </select>
+            <label for="review-text">Your opinion:</label>
+            <div class="input-group"></div>
+                <textarea id="review-text" name="review-text" required></textarea>
+            </div>
+            <div>
+                <button type="submit" id="submit-review-btn">Submit</button>
+            </div>
+        </form>
+    </section>
+</main>
+{% endblock %}

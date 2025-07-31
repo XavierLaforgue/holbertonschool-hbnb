@@ -1,0 +1,27 @@
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: var(--theme-primary-color);
+    padding: 10px;
+    color: var(--theme-primary-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a {
+    color: var(--theme-primary-text-color);
+    text-decoration: none;
+}
+
+#all-rights-reserved {
+    display: inline-flex;
+    align-items: center;
+}
+
+#footer-logo {
+    height:24px;
+    margin-right:10px;
+    background-color: var(--theme-primary-text-color);
+    border-radius: 5px;
+}

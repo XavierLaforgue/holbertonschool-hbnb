@@ -1,0 +1,115 @@
+/* home page styling */
+
+/* filter drop-down menu */
+#filter {
+    text-align: center;
+}
+
+#filter select {
+    font-size: 1rem;
+    padding: 4px 8px;
+    margin: 4px;
+    border-radius: 8px;
+}
+
+/* list of places */
+#places-list {
+    display: flex;
+	/* arrange the place cards in a row */
+	flex-direction: row;
+	/* allow the row of place cards to wrap at the end of the screen */
+    flex-wrap: wrap;
+    padding-top: 20px;
+    /* align-items: center; */
+    justify-content: start;
+    gap: 30px;
+}
+
+/* individual place card style */
+.place-card {
+    display: flex; 
+	/* flex column to place the button at the bottom */
+    flex-direction: column;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--theme-border-color);
+    border-radius: 10px;
+    flex: 0 0 300px;
+    height: 300px;
+    width: 500px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 20px;
+    padding: 10px;
+    opacity: 0;
+	background-color: var(--theme-card-background-color);
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* place-card pseudo classes (states) */
+#places-list .place-card:hover {
+    box-shadow: 0 4px 16px var(--theme-box-shadow);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    transform: translateY(-2px) scale(1.04);
+    cursor: pointer;
+}
+
+#places-list .place-card h2 {
+    padding: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--theme-primary-color);
+}
+
+#places-list .place-description {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 10px;
+    padding-right: 10px;
+    margin-bottom: 8px;
+    text-align: justify;
+}
+
+/* styling the details button */
+#places-list .details-button {
+    margin-top: auto;
+    align-self: center;
+    width: fit-content;
+    padding: 12px 28px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    color: var(--theme-primary-text-color);
+    background-color: var(--theme-primary-color);
+    background: linear-gradient(90deg, var(--theme-primary-color) 70%, var(--theme-primary-color-gradient) 100%);
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    box-shadow: 0 4px 16px var(--theme-box-shadow);
+    text-decoration: none;
+}
+
+.details-button:hover {
+    cursor: pointer;
+    background-color: var(--theme-primary-color-highlight);
+    box-shadow: 0 6px 24px rgba(90,0,0,0.25);
+    transform: translateY(-2px) scale(1.04);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.details-button:active {
+    background-color: #a80000;
+    box-shadow: 0 2px 8px rgba(90,0,0,0.35);
+    transform: translateY(1px) scale(0.98);
+    transition: background 0.1s, box-shadow 0.1s, transform 0.1s;
+}

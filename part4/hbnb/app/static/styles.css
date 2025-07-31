@@ -1,0 +1,44 @@
+/* Global style */
+
+/* color definitions */
+:root {
+    --theme-primary-color: darkred;
+    --theme-primary-color-light: #ff90908c;
+    --theme-primary-text-color: white;
+    --theme-primary-color-highlight: rgb(192, 6, 6);
+    --theme-primary-color-highlight-grad: #5a000077;
+    --theme-box-shadow: rgba(90,0,0,0.15);
+    --theme-background-color: #f4f4f4;
+    --theme-border-color: #ddd;
+    --theme-regular-text-color: #333;
+    --theme-card-background-color: white;
+    --theme-primary-color-gradient: #7a1f1fb0;
+}
+
+/* remove spurious default spacing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* global html settings */
+body {
+    background-color: var(--theme-background-color);
+    color: var(--theme-regular-text-color);
+    min-height: 100vh;
+    /* allow for flexible height */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    padding: 2rem;
+    /* expands vertically as necessary in body's flex container */
+    flex: 1;
+}
+
+h1 {
+    text-align: center;
+}
