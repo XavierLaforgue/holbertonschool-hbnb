@@ -244,3 +244,12 @@ class UserResource(AdminPrivilegesUserModify, AdminPrivilegesUserDelete):
             api.abort(404, error='User not found')
             return {'error': 'User not found'}, 404
         return user, 200
+
+@api.route('/me')
+class CurrentUserResource(Resource):
+    @api.doc('ID of authenticated user', security='Bearer')
+    @jwt_required()
+    def get(self):
+        user_id = get_jwt_identity()
+        # Fetch user from DB if needed, or just return the ID
+        return {'user_id': user_id}, 200
