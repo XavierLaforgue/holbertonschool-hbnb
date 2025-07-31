@@ -65,20 +65,22 @@
     <!-- If logged in -->
     <section id="add-review">
         <h2>Add a Review</h2>
-        <form id="review-form">
-            <label for="review-text">Your Review:</label>
-            <div class="input-group"></div>
-                <textarea id="review-text" name="review-text" required></textarea>
-                <label for="rating">Rating:</label>
+        <form id="review-form" data-place-id="{{ place.id }}">
+            <label for="rating">Rating:</label>
                 <select id="rating" name="rating" required>
                     <!-- Options for rating -->
-                    <option value="1">★☆☆☆☆</option>
-                    <option value="2">★★☆☆☆</option>
-                    <option value="3">★★★☆☆</option>
-                    <option value="4">★★★★☆</option>
-                    <option value="5">★★★★★</option>
+                    <option value=1>1 ★☆☆☆☆</option>
+                    <option value=2>2 ★★☆☆☆</option>
+                    <option value=3>3 ★★★☆☆</option>
+                    <option value=4>4 ★★★★☆</option>
+                    <option value=5>5 ★★★★★</option>
                 </select>
-                <button type="submit">Submit</button>
+            <label for="review-text">Your opinion:</label>
+            <div class="input-group"></div>
+                <textarea id="review-text" name="review-text" required></textarea>
+            </div>
+            <div>
+                <button type="submit" id="submit-review-btn">Submit</button>
             </div>
         </form>
     </section>
