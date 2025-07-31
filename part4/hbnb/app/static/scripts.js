@@ -68,7 +68,6 @@ async function isTokenValid(token) {
     }
   });
   if (!response.ok) {
-    alert(`Token is not valid: ${response.status} ${response.statusText}`);
     return false;
   };
   return true;
@@ -289,10 +288,9 @@ if (priceFilter) {
   });
 }
 
-
-
 async function submitReview(token, text, rating, place_id) {
   if (!(await isTokenValid(token))) {
+    alert('Token is no longer valid');
     window.location.href = '/login';
   }
   const response = await fetch(`${my_url}/reviews/`, {
@@ -307,7 +305,7 @@ async function submitReview(token, text, rating, place_id) {
   );
   if (response.ok) {
     const data = await response.json();
-    alert(`Review submission success: ${response.status} ${response.statusText}`);
+    alert('Review submitted successfully');
     window.location.reload();
   } else {
     const errorData = await response.json();
