@@ -26,10 +26,11 @@ def create_app(config_class="config.DevelopmentConfig"):
     app = Flask(__name__)
     app.config.from_object(config_class)
     # app.config['ERROR_INCLUDE_MESSAGE'] = False
-    CORS(app)
     bcrypt.init_app(app)
     jwt.init_app(app)
     db.init_app(app)
+
+    CORS(app, supports_credentials=True, allow_headers=["Authorization", "Content-Type"])
 
     @app.route('/')
     def home():
