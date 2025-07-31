@@ -1,0 +1,81 @@
+/* styling for login form */
+
+#login-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--theme-background-color, #f4f4f4);
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--theme-card-background-color, #fff);
+    padding: 32px 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px var(--theme-box-shadow, rgba(90,0,0,0.15));
+    min-width: 320px;
+    max-width: 380px;
+    width: 100%;
+    margin: 0 auto;
+    align-items: stretch;
+    border: 1px solid var(--theme-primary-color-light, #ff90908c);
+}
+
+#login-form h1, #login-form h2, #login-form h3 {
+    text-align: center;
+    margin-bottom: 16px;
+    color: var(--theme-primary-color, darkred);
+    font-weight: 700;
+}
+
+#login-form label {
+    margin-bottom: 4px;
+    font-weight: 500;
+    color: var(--theme-regular-text-color, #333);
+}
+
+#login-form input {
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--theme-primary-color-light, #ff90908c);
+    background: #fff;
+    color: var(--theme-regular-text-color, #333);
+    box-shadow: 0 2px 6px rgba(90,0,0,0.08);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#login-form input:focus {
+    outline: none;
+    border-color: var(--theme-primary-color, darkred);
+    box-shadow: 0 0 0 2px var(--theme-primary-color-light, #ff90908c), 0 2px 6px rgba(90,0,0,0.12);
+    background: #fffbe9;
+}
+
+#login-form button[type="submit"] {
+    margin-top: 8px;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--theme-primary-color) 70%, var(--theme-primary-color-gradient) 100%);
+    color: var(--theme-primary-text-color, #fff);
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 4px 16px var(--theme-box-shadow, rgba(90,0,0,0.15));
+    width: auto;
+    align-self: center;
+    padding: 10px 32px;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+#login-form button[type="submit"]:hover {
+    background-color: var(--theme-primary-color-highlight, #a80000);
+    box-shadow: 0 6px 24px rgba(90,0,0,0.25);
+    transform: translateY(-2px) scale(1.04);
+}

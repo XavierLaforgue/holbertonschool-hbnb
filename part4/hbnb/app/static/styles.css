@@ -1,8 +1,6 @@
-/* 
-  This is a SAMPLE File to get you started. Follow the instructions on the project to complete the tasks. 
-  You'll probably need to override some of theese styles.
-*/
+/* Global style */
 
+/* color definitions */
 :root {
     --theme-primary-color: darkred;
     --theme-primary-color-light: #ff90908c;
@@ -10,8 +8,14 @@
     --theme-primary-color-highlight: rgb(192, 6, 6);
     --theme-primary-color-highlight-grad: #5a000077;
     --theme-box-shadow: rgba(90,0,0,0.15);
+    --theme-background-color: #f4f4f4;
+    --theme-border-color: #ddd;
+    --theme-regular-text-color: #333;
+    --theme-card-background-color: white;
+    --theme-primary-color-gradient: #7a1f1fb0;
 }
 
+/* remove spurious default spacing */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,253 +23,22 @@
     font-family: 'Roboto', Arial, sans-serif;
 }
 
+/* global html settings */
 body {
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--theme-background-color);
+    color: var(--theme-regular-text-color);
     min-height: 100vh;
+    /* allow for flexible height */
     display: flex;
     flex-direction: column;
 }
 
 main {
     padding: 2rem;
+    /* expands vertically as necessary in body's flex container */
     flex: 1;
 }
 
 h1 {
     text-align: center;
-}
-
-#filter {
-    text-align: center;
-}
-
-#filter select {
-    font-size: 1rem;
-    padding: 4px 8px;
-    margin: 4px;
-    border-radius: 8px;
-}
-
-#places-list {
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 20px;
-    align-items: center;
-    justify-content: start;
-    gap: 30px;
-    flex-direction: row;
-}
-
-.place-card {
-    display: flex; 
-    flex-direction: column;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #ddd; /*var(--theme-primary-color);*/
-    border-radius: 10px;
-    flex: 0 0 300px;
-    height: 300px;
-    width: 500px;
-    box-sizing: border-box;
-    overflow: hidden;
-    margin: 20px;
-    padding: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.5s forwards;
-}
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-#places-list .place-card:hover {
-    box-shadow: 0 4px 16px var(--theme-box-shadow);
-    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-    transform: translateY(-2px) scale(1.04);
-    cursor: pointer;
-}
-
-#places-list .place-card h2 {
-    padding: 4px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-    color: var(--theme-primary-color);
-}
-
-.place-description {
-    flex: 1 1 auto;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 10px;
-    padding-right: 10px;
-    margin-bottom: 8px;
-    text-align: justify;
-}
-
-.details-button {
-    margin-top: auto;
-    align-self: center;
-    width: fit-content;
-    padding: 12px 28px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    color: var(--theme-primary-text-color);
-    background-color: var(--theme-primary-color);
-    background: linear-gradient(90deg, var(--theme-primary-color) 60%, #7a1f1f 100%);
-    font-weight: bold;
-    font-size: 1rem;
-    border: none;
-    box-shadow: 0 4px 16px var(--theme-box-shadow);
-    text-decoration: none;
-}
-
-.details-button:hover {
-    cursor: pointer;
-    background-color: var(--theme-primary-color-highlight);
-    box-shadow: 0 6px 24px rgba(90,0,0,0.25);
-    transform: translateY(-2px) scale(1.04);
-    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-}
-
-.details-button:active {
-    background-color: #a80000;
-    box-shadow: 0 2px 8px rgba(90,0,0,0.35);
-    transform: translateY(1px) scale(0.98);
-    transition: background 0.1s, box-shadow 0.1s, transform 0.1s;
-}
-
-/* Features list styling for place.html */
-.features-list {
-    list-style: none;
-    padding: 0;
-    margin: 16px 0;
-    display: flex;
-    gap: 12px;
-}
-
-.features-list li {
-    background: #fff;
-    border: 1px solid var(--theme-primary-color-light);
-    border-radius: 8px;
-    padding: 8px 16px;
-    box-shadow: 0 2px 6px rgba(90,0,0,0.08);
-    font-weight: 500;
-    color: #333;
-    min-width: 80px;
-    text-align: center;
-}
-
-.reviews-list {
-    display: flex;
-    padding: 0px;
-    align-items: left;
-    gap: 10px;
-    flex-direction: column;
-    padding: 10px;
-}
-
-.review-card {
-    display: flex; 
-    flex-direction: column;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #ddd; /*var(--theme-primary-color);*/
-    border-radius: 10px;
-    flex: 0 0 auto;
-    height: auto;
-    width: auto;
-    box-sizing: border-box;
-    overflow: hidden;
-    margin: 6px;
-    padding: 6px;
-}
-
-.rating {
-    color: gold;
-    font-size: 1.2em;
-    letter-spacing: 2px;
-}
-
-#add-review {
-    display: none;
-}
-
-#review-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0px;
-    padding: 10px;
-}
-
-#review-form .input-group {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-#review-form label {
-    margin-top: 0;
-    margin-bottom: 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 10px;
-}
-
-#review-form textarea {
-    min-height: 80px;
-    min-width: 160px;
-    resize: both;
-    /* flex: 1; */
-    margin: 0px;
-    padding: 5px;
-}
-
-#review-text {
-  width: 80%;         /* or any fixed value, e.g. 400px */
-  min-width: 200px;    /* optional: minimum width */
-  min-height: 80px;    /* optional: minimum height */
-  resize: both;        /* allows user to resize both width and height */
-  /* overflow: hidden; */
-}
-
-#review-form button[type="submit"] {
-    font-size: 1em;
-    padding: 8px 20px;
-    border-radius: 12px;
-    background: linear-gradient(90deg, var(--theme-primary-color) 60%, #7a1f1f 100%);
-    color: var(--theme-primary-text-color);
-    font-weight: bold;
-    border: none;
-    box-shadow: 0 4px 16px var(--theme-box-shadow);
-    margin-top: 12px;
-    cursor: pointer;
-    /* transition: background 0.2s, box-shadow 0.2s, transform 0.2s; */
-}
-
-#review-form button[type="submit"]:hover {
-    cursor: pointer;
-    background-color: var(--theme-primary-color-highlight);
-    box-shadow: 0 6px 24px rgba(90,0,0,0.25);
-    transform: translateY(-2px) scale(1.04);
-    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-}
-
-#review-form button[type="submit"]:active {
-    background-color: #a80000;
-    box-shadow: 0 2px 8px rgba(90,0,0,0.35);
-    transform: translateY(1px) scale(0.98);
-    transition: background 0.1s, box-shadow 0.1s, transform 0.1s;
-}
-
-#login-form input {
-    padding: 5px;
 }

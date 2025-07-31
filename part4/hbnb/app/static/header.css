@@ -1,5 +1,6 @@
+/* styling for header and navigation links */
 header {
-    background: linear-gradient(90deg, var(--theme-primary-color) 60%, #7a1f1f 100%);
+    /* background: linear-gradient(90deg, var(--theme-primary-color) 60%, #7a1f1f 100%); */
     background-color: var(--theme-primary-color);
     color: var(--theme-primary-text-color);
     height: 60px;
@@ -50,16 +51,17 @@ nav a:active {
 }
 
 .logo-div {
-    background-color: var(--theme-primary-text-color);
     height: 100%;
     display: flex;
     align-items: center;
     padding: 0 10px;
     border-radius: 10px;
+    background-color: var(--theme-background-color);
 }
 
 .logo {
     height: 100%;
     width: auto;
     display: block;
+    background-color: var(--theme-background-color);
 }

@@ -1,0 +1,116 @@
+/* Features list styling for place.html */
+
+#place-details {
+    display: flex; 
+    flex-direction: column;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--theme-border-color);
+    border-radius: 10px;
+    flex: 0 0 300px;
+    box-sizing: border-box;
+    margin: 20px;
+    padding: 10px;
+	background-color: var(--theme-card-background-color);
+}
+
+#place-details h2 {
+    padding: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--theme-primary-color);
+}
+
+#place-details #place-info .place-meta {
+	display: flex;
+	padding: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+	justify-content: space-between;
+}
+
+#place-details #place-info .place-description {
+	padding: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+#place-details #place-info .place-description h3 {
+	padding-bottom: 4px;
+}
+
+#place-details #place-info .Amenities {
+	/* display: flex; */
+	padding: 4px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+
+/* general list styling */
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+    display: flex;
+	flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* individual amenity list item styling */
+.features-list li {
+    background: var(--theme-primary-color-light);
+    border: 1px solid var(--theme-primary-color-light);
+    border-radius: 8px;
+    padding: 8px 16px;
+    box-shadow: 0 2px 6px rgba(90,0,0,0.08);
+    font-weight: 500;
+    color: var(--theme-regular-text-color);
+    min-width: 80px;
+    text-align: center;
+}
+
+/* styling for the list of reviews */
+.reviews-list {
+    display: flex;
+    padding: 0px;
+    align-items: left;
+    gap: 0px;
+    flex-direction: column;
+}
+
+/* styling individual review card */
+.review-card {
+    display: flex; 
+    flex-direction: column;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--theme-border-color);
+	background-color: var(--theme-card-background-color);
+    border-radius: 10px;
+    flex: 0 0 auto;
+    height: auto;
+    width: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-right: 20px;
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+    padding: 10px;
+}
+
+.review-card h3 {
+	color: var(--theme-primary-color);
+	padding-bottom: 10px;
+}
+
+.rating {
+    color: gold;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+}
