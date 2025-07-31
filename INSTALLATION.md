@@ -35,7 +35,10 @@ On your terminal, type down the following command:
 ```
 mkdir instance; sqlite3 instance/development.db < create_tables.sql
 ```
-
+### 4.1 (Optional) Populate database with more sample data
+```
+sqlite3 instance/development.db < populate_sample_db.sql
+```
 ## 5. Application utilisation
 From the hbnb directory (within part4), run:
 ```
