@@ -3,7 +3,7 @@
 This application has been tested on python 3.13.3.
 If you try to use a different python version results are not
 guaranteed.
-If your sustem's python version is different, the use of a `pyenv` with
+If your system's python version is different, the use of a `pyenv` with
 python 3.13.3 is highly recommended.
 
 ## 1. Clone the repository
@@ -41,4 +41,5 @@ From the hbnb directory (within part4), run:
 ```
 python run.py
 ```
-The API will be available at http://127.0.0.1:5000/api/v1.
+The web client will be available at http://127.0.0.1:5000/ while the
+api Swagger documentation lies at http://127.0.0.1:5000/api/v1.
