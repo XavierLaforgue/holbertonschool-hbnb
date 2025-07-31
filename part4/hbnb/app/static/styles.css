@@ -164,10 +164,11 @@ h1 {
 
 .reviews-list {
     display: flex;
-    padding: 20px;
+    padding: 0px;
     align-items: left;
-    gap: 30px;
+    gap: 10px;
     flex-direction: column;
+    padding: 10px;
 }
 
 .review-card {
@@ -182,8 +183,8 @@ h1 {
     width: auto;
     box-sizing: border-box;
     overflow: hidden;
-    margin: 20px;
-    padding: 10px;
+    margin: 6px;
+    padding: 6px;
 }
 
 .rating {
@@ -192,18 +193,22 @@ h1 {
     letter-spacing: 2px;
 }
 
+#add-review {
+    display: none;
+}
+
 #review-form {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 0px;
     padding: 10px;
 }
 
 #review-form .input-group {
     display: flex;
     flex-direction: column;
-    width: auto;
+    width: 100%;
 }
 
 #review-form label {
@@ -212,15 +217,24 @@ h1 {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding-top: 4px;
+    padding: 10px;
 }
 
 #review-form textarea {
     min-height: 80px;
-    resize: vertical;
-    flex: 1;
+    min-width: 160px;
+    resize: both;
+    /* flex: 1; */
     margin: 0px;
     padding: 5px;
+}
+
+#review-text {
+  width: 80%;         /* or any fixed value, e.g. 400px */
+  min-width: 200px;    /* optional: minimum width */
+  min-height: 80px;    /* optional: minimum height */
+  resize: both;        /* allows user to resize both width and height */
+  /* overflow: hidden; */
 }
 
 #review-form button[type="submit"] {
@@ -234,13 +248,22 @@ h1 {
     box-shadow: 0 4px 16px var(--theme-box-shadow);
     margin-top: 12px;
     cursor: pointer;
-    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    /* transition: background 0.2s, box-shadow 0.2s, transform 0.2s; */
 }
 
 #review-form button[type="submit"]:hover {
-    background: linear-gradient(90deg, var(--theme-primary-color-highlight) 60%, var(--theme-primary-color-highlight-grad) 100%);
+    cursor: pointer;
+    background-color: var(--theme-primary-color-highlight);
     box-shadow: 0 6px 24px rgba(90,0,0,0.25);
     transform: translateY(-2px) scale(1.04);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+#review-form button[type="submit"]:active {
+    background-color: #a80000;
+    box-shadow: 0 2px 8px rgba(90,0,0,0.35);
+    transform: translateY(1px) scale(0.98);
+    transition: background 0.1s, box-shadow 0.1s, transform 0.1s;
 }
 
 #login-form input {

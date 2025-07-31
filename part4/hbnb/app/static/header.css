@@ -45,6 +45,10 @@ nav a:active {
     transition: background 0.1s, box-shadow 0.1s, transform 0.1s;
 }
 
+.nav-links #login-link, .nav-links #logout-link {
+    display: none;
+}
+
 .logo-div {
     background-color: var(--theme-primary-text-color);
     height: 100%;
