@@ -8,7 +8,7 @@
         <div id="place-info">
             <div class="place-meta">
                 <span class="host"><b>Host:</b> {{ place.owner.first_name }} {{place.owner.last_name}}</span>
-                <br>
+                <!-- <br> -->
                 <span class="price"><b>Price:</b> {{ place.price }} €/night</span>
             </div>
             <section class="place-description">
@@ -36,6 +36,7 @@
             {% if place.reviews|length > 0 %}
                 {% for review in place.reviews %}
                     <article class="review-card">
+                        <h3>{{ review.user.first_name }} {{ review.user.last_name }}:</h3>
                         <p>{{ review.text }}</p>
                         <span>Rating: {{ review.rating }} 
                             <span class="rating">
@@ -47,9 +48,9 @@
             {% else %}
                 <article class="review-card">
                     <p>Not reviewed yet</p>
-                    <span>Rating: ?
+                    <!-- <span>Rating: ?
                         <span class="rating">☆☆☆☆☆</span>
-                    </span>
+                    </span> -->
                 </article>
             {% endif %}
             <!-- <article class="review-card">
