@@ -1,0 +1,80 @@
+INSERT INTO users 
+VALUES(
+	'd5a5c836-b48d-40a1-942f-3f73617f9fb1',
+	'2025-07-31 13:21:09.024527',
+	'2025-07-31 13:21:09.024553',
+	'Louise',
+	'Bernard',
+	'louise.bernard@example.com',
+	'$2b$12$vRcuID6yJKSi3HBVq/j3UOfqkgpO7namRDIaSARETZeAfURPAKuJ2',
+	0);
+INSERT INTO users
+VALUES(
+	'973761dc-32a4-4e95-a248-c4bdfdaad93f',
+	'2025-07-31 13:21:33.956150',
+	'2025-07-31 13:21:33.956153',
+	'Ambre',
+	'Laurent',
+	'ambre.laurent@example.com',
+	'$2b$12$YqFPxRi69BhOdQVOwbKzj.QL3TdReR5ij3oxS7Z3Zh6.G.AlYcjr2',
+	0);
+INSERT INTO users
+VALUES(
+	'03765613-26ca-49cc-833a-8afe59d132cb',
+	'2025-07-31 13:21:51.854086',
+	'2025-07-31 13:21:51.854092',
+	'Alba',
+	'Boucher',
+	'alba.boucher@example.com',
+	'$2b$12$tBTozh29l5sNpHiFjKX1G.MPg7V9GoCDEEgZNdZ6uO5McQ4vK/qui',
+	0);
+INSERT INTO users
+VALUES(
+	'f4d6b5be-641f-4ba6-b625-00a61f517bff',
+	'2025-07-31 13:22:08.615940',
+	'2025-07-31 13:22:08.615944',
+	'Jade',
+	'Aubert',
+	'jade.aubert@example.com',
+	'$2b$12$mkWROEGL6wnuVWxhHejuR.2RJkZGT4/xLTQQgo4eyrBNvMvVc/uoO',
+	0);
+INSERT INTO users
+VALUES(
+	'8f2f3c8d-d540-4914-b817-e9baaf416340',
+	'2025-07-31 13:22:28.220899',
+	'2025-07-31 13:22:28.220904',
+	'Emma',
+	'Moreau',
+	'emma.moreau@example.com',
+	'$2b$12$Ak0nDeCd.NjpBJHmFGKD.u2UwJxa1dB5v4ojqYx1LNOXEAq8nREyq',
+	0);
+INSERT INTO users VALUES('588e1ef0-1b2d-4255-a9a7-bd7f898fae14','2025-07-31 13:22:50.786338','2025-07-31 13:22:50.786362','Gabriel','Allard','gabriel.allard@example.com','$2b$12$jQeU/zHHs2LdikNug5o/HejVvj.HwczFdqKndnhlP1mgvi/vRjfse',0);
+INSERT INTO users VALUES('ffb524f5-b37b-4c03-902a-06cd38d65dfe','2025-07-31 13:23:14.601190','2025-07-31 13:23:14.601208','Raphaël','Martin','raphael.martin@example.com','$2b$12$6hbn8dolCcy98.7Y1tOQIOC.M6YULAM237hKJrp7COt7.EXbGDU.C',0);
+INSERT INTO users VALUES('c3393d1a-cfba-4cce-802d-951b0914a061','2025-07-31 13:23:35.816788','2025-07-31 13:23:35.816806','Léo','Durand','leo.durand@example.com','$2b$12$BH7eTxwHYZwD4t5drT3AOOYc0egw7zkNmcFTHHjltIYTaVx7/EhQ6',0);
+INSERT INTO users VALUES('bbe299b2-e910-4efe-84c4-13b3937d8499','2025-07-31 13:23:53.116926','2025-07-31 13:23:53.116935','Louis','Auclair','louis.auclair@example.com','$2b$12$eg2FUI5o6gWjNyMfHCibTOM7TYVmxsyp6anULkw1LkmV5kXrbWpvW',0);
+INSERT INTO users VALUES('8a95117d-a73c-45f3-af03-7596807bc4a6','2025-07-31 13:24:17.176631','2025-07-31 13:24:17.176637','Maël','Archambeau','mael.archambeau@example.com','$2b$12$vO9t97y8XARR2mAPUa.mg.ZDk48rQswNhzUimJCHjA2H9l7oXOru6',0);
+
+INSERT INTO amenities VALUES('3a33d2ca-39c9-413b-95e1-2accb011a702','2025-07-31 13:37:31.615664','2025-07-31 13:37:31.615671','Smart TV');
+INSERT INTO amenities VALUES('d400df01-9e60-4a9b-b172-5b4e9b432c18','2025-07-31 13:38:09.296180','2025-07-31 13:38:09.296184','Laundry room');
+INSERT INTO amenities VALUES('01cb9bdd-81e3-440e-89ae-d212e552c56e','2025-07-31 13:38:25.505549','2025-07-31 13:38:25.505554','Equipped kitchen');
+INSERT INTO amenities VALUES('b9e271f2-ab1b-4279-915b-c231cae7cdbd','2025-07-31 13:38:31.738321','2025-07-31 13:38:31.738325','Parking');
+INSERT INTO amenities VALUES('75dfc1cb-74ec-43e5-bee2-7211175d4a1e','2025-07-31 13:38:39.698752','2025-07-31 13:38:39.698756','Free parking');
+INSERT INTO amenities VALUES('8fdcd3da-c858-4c78-8063-1eed7f05e612','2025-07-31 13:38:46.695813','2025-07-31 13:38:46.695817','Jacuzzi');
+INSERT INTO amenities VALUES('50a6507c-4a64-4db4-ac49-7d567cd1e973','2025-07-31 13:39:00.172230','2025-07-31 13:39:00.172241','Washing machine');
+INSERT INTO amenities VALUES('2a5b12f5-5032-4fc2-81e0-7de06ea48c55','2025-07-31 13:39:05.708718','2025-07-31 13:39:05.708722','Dishwasher');
+INSERT INTO amenities VALUES('2f559737-05ee-4b6a-85d5-04fbbab4de44','2025-07-31 13:39:17.330280','2025-07-31 13:39:17.330287','Fireplace');
+INSERT INTO amenities VALUES('54a6f88f-cddd-490c-b865-defd4a61b084','2025-07-31 13:40:32.666108','2025-07-31 13:40:32.666112','Bathrobes');
+
+INSERT INTO places VALUES('6159684b-f6f7-43bc-a8c0-174ffd8d1ee0','2025-07-31 13:36:30.957911','2025-07-31 13:36:30.957919','Wonderful appartment','Great appartment in the center of Dijon',10,47.331425000000002965,5.0491143000000002771,'d5a5c836-b48d-40a1-942f-3f73617f9fb1');
+INSERT INTO places VALUES('ecd0833f-85e6-4f1a-975a-948086b33866','2025-07-31 13:53:43.676408','2025-07-31 13:53:43.676418','Cozy apartment','Feel like home while visiting the city of lights !',20,45.760528000000000757,4.8688779999999995951,'973761dc-32a4-4e95-a248-c4bdfdaad93f');
+INSERT INTO places VALUES('a15748c8-9320-46ed-8c46-a13019d994b3','2025-07-31 13:56:36.405645','2025-07-31 13:56:36.405651','Expensive closet','Uncomfortable place in beautiful Avignon',50,43.950181000000000607,4.8041179999999998884,'03765613-26ca-49cc-833a-8afe59d132cb');
+INSERT INTO places VALUES('9b47fb8c-a4e9-445a-b4c8-ff06052a3c07','2025-07-31 14:00:14.717970','2025-07-31 14:00:14.717974','Peaceful room','Very peaceful lot for your budget visit to Albi',10,43.931559000000000025,2.1371240000000000236,'f4d6b5be-641f-4ba6-b625-00a61f517bff');
+INSERT INTO places VALUES('b2b256c1-5015-4c9f-bd79-5b35e6179c6c','2025-07-31 14:03:47.469496','2025-07-31 14:03:47.469507','Chair besides the statue of Cyrano de Bergerac',NULL,1,44.851297000000002412,0.48319800000000001638,'8f2f3c8d-d540-4914-b817-e9baaf416340');
+INSERT INTO places VALUES('afb5f3d2-3be3-4c7b-a944-336c8c80dee5','2025-07-31 14:49:05.344131','2025-07-31 14:49:05.344138','Heavenly tent',NULL,666,47.357019403307006656,4.9648249994603075307,'588e1ef0-1b2d-4255-a9a7-bd7f898fae14');
+
+INSERT INTO reviews VALUES('675c1b12-77bd-4cee-9430-50402e78bd82','2025-07-31 14:41:08.490654','2025-07-31 14:41:08.490666','It''s a cemetery !',1,'40a54b25-fc77-4353-94c8-50d882600b86','9b47fb8c-a4e9-445a-b4c8-ff06052a3c07');
+INSERT INTO reviews VALUES('c61ee4ab-d46a-4612-b556-1b29a3dc387b','2025-07-31 15:23:17.529140','2025-07-31 15:23:17.529146','Devil''s gate ??? REPORT !!!',1,'40a54b25-fc77-4353-94c8-50d882600b86','afb5f3d2-3be3-4c7b-a944-336c8c80dee5');
+INSERT INTO reviews VALUES('a682bd4b-b676-4dd4-80fb-86d394df6fac','2025-07-31 15:40:15.827142','2025-07-31 15:40:15.827146','Wonderful ?? More like Meh !',2,'40a54b25-fc77-4353-94c8-50d882600b86','6159684b-f6f7-43bc-a8c0-174ffd8d1ee0');
+INSERT INTO reviews VALUES('992d1918-d441-4452-b8f7-af09a6ffd1a8','2025-07-31 15:55:40.346602','2025-07-31 15:55:40.346611','Is this a joke ?!!',1,'40a54b25-fc77-4353-94c8-50d882600b86','a15748c8-9320-46ed-8c46-a13019d994b3');
+INSERT INTO reviews VALUES('db520f05-ef8c-4c7d-9b7e-3fca620dcb96','2025-07-31 21:55:26.900920','2025-07-31 21:55:26.900934',replace('I had a lot of fun at this place.\nNot dangerous at all!','\n',char(10)),4,'c3393d1a-cfba-4cce-802d-951b0914a061','afb5f3d2-3be3-4c7b-a944-336c8c80dee5');
+INSERT INTO reviews VALUES('a495e894-ff7c-488d-9668-e54f7844028c','2025-07-31 22:53:02.199078','2025-07-31 22:53:02.199088','Not even a review, just a hater.',1,'40a54b25-fc77-4353-94c8-50d882600b86','ecd0833f-85e6-4f1a-975a-948086b33866');
