@@ -168,7 +168,8 @@ class Place(BaseEntity):
             raise ValueError('Expected review but received None')
         from app.models.review import Review
         type_validation(review, "Review", Review)
-        self.reviews.append(review)
+        if review not in self.reviews:  # already added via back_populates
+            self.reviews.append(review)
 
     @hybrid_property
     def reviews(self):  # type: ignore

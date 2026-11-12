@@ -61,6 +61,17 @@ class RelationshipsTest(unittest.TestCase):
         self.session.commit()
         self.session.refresh(self.test_place)
 
+        # A second user to write reviews (an owner cannot review their own place)
+        self.reviewer = User(
+            first_name="Review",
+            last_name="Writer",
+            email=f"reviewer_{uuid.uuid4()}@example.com",
+            password="password123"
+        )
+        self.session.add(self.reviewer)
+        self.session.commit()
+        self.session.refresh(self.reviewer)
+
     def tearDown(self):
         """Clean up after each test"""
         self.session.rollback() # Annule les changements faits par le test actuel
@@ -128,7 +139,7 @@ class RelationshipsTest(unittest.TestCase):
         new_review = Review(
             text=review_text,
             rating=5,
-            user=self.test_user,  # L'utilisateur qui écrit la critique
+            user=self.reviewer,  # L'utilisateur qui écrit la critique
             place=self.test_place  # La place critiquée
         )
         self.session.add(new_review)
@@ -136,7 +147,7 @@ class RelationshipsTest(unittest.TestCase):
         self.session.refresh(new_review)
 
         # Vérifier depuis l'utilisateur
-        retrieved_user = self.session.query(User).get(self.test_user.id)
+        retrieved_user = self.session.query(User).get(self.reviewer.id)
         self.assertIsNotNone(retrieved_user)
         self.assertIn(new_review, retrieved_user.reviews)
         self.assertEqual(len(retrieved_user.reviews), 1)
@@ -153,7 +164,7 @@ class RelationshipsTest(unittest.TestCase):
         new_review = Review(
             text=review_text,
             rating=4,
-            user=self.test_user,
+            user=self.reviewer,
             place=self.test_place
         )
         self.session.add(new_review)
@@ -184,7 +195,7 @@ class RelationshipsTest(unittest.TestCase):
         # Créer une critique pour cette place
         review_text = "This review should be deleted."
         review_to_delete = Review(
-            text=review_text, rating=4, user=self.test_user, place=place_to_delete
+            text=review_text, rating=4, user=self.reviewer, place=place_to_delete
         )
         self.session.add(review_to_delete)
         self.session.commit()

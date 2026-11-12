@@ -1,65 +1,62 @@
-# HBnB Evolution
-This repository has as objective to recreate ann Airbnb-like application.
+# HBnB: an Airbnb-like web application
 
-It will be composed of four parts:
-- Technical documentation (UML)
-- Business Logic and API
-- Authentification and Database
-- [current stage of development] Simple Web Client
+[![CI](https://github.com/XavierLaforgue/holbertonschool-hbnb/actions/workflows/ci.yml/badge.svg)](https://github.com/XavierLaforgue/holbertonschool-hbnb/actions/workflows/ci.yml)
 
-## Technical documentation
-This documentation will help understand the overall architecture, behavior and responsibilities of the system models, design of the business logic, and the interactions between the different application components.
-This documentation will help understand the overall architecture, behavior and responsibilities of the system models, design of the business logic, and the interactions between the different application components.
+A full-stack rental-listing application built in four stages, from UML design to a working web client: a **Flask REST API** with a three-layer architecture, **JWT authentication** and role-based access, **SQLAlchemy** persistence, and a **JavaScript** front end. Pair project for Holberton School (June–July 2025), built over four Scrum sprints.
 
-The first part of this project is the production of selected UML diagrams and their explanatory notes, the included diagrams are:
-- A high-Level package diagram showing a three-layer architecture and the communication between these layers via the facade pattern
-- A class diagram showing the different relationships between the classes
-- Some sequence diagrams (User Registration, Place Creation, Review Submission, Fetching a list of Places, User Login) for API calls showing the interaction between the layers and the flow of information.
+![Home page listing places](part4/hbnb/images/img_index.png)
 
-## Implementation of Business Logic and API Endpoints
-This phase of the HBnB project focuses on building the core functionality of the application using Python and Flask. We'll bring the documented architecture to life by implementing the Presentation and Business Logic layers, defining essential classes, methods, and API endpoints.
+| | |
+|---|---|
+| **Back end** | Python 3.13, Flask, Flask-RESTx (Swagger docs), Flask-JWT-Extended, Flask-Bcrypt, SQLAlchemy |
+| **Database** | SQLite, through the SQLAlchemy ORM |
+| **Front end** | HTML5, CSS3, JavaScript (ES6) |
+| **Architecture** | Presentation / business logic / persistence layers behind a facade; repository pattern |
+| **Tests** | 47 automated tests on the final application (models, validation, relationships), run on every push by GitHub Actions |
 
-The goal is to create a functional and scalable foundation for the application. This involves:
+**Run it:** see [INSTALLATION.md](INSTALLATION.md). In short, from `part4/hbnb`: install `requirements.txt`, create the SQLite database from `create_tables.sql`, then `python run.py`. The web client opens at http://127.0.0.1:5000/ and the Swagger API documentation at http://127.0.0.1:5000/api/v1.
 
-- Business Logic Layer: Developing the core models and logic that drive the application's functionality. This includes defining relationships, handling data validation, and managing interactions between different components.
-- Presentation Layer: Defining the services and API endpoints using Flask and Flask-RESTx. We'll structure the endpoints logically, ensuring clear paths and parameters for each operation.
+**Run the tests:** from `part4/hbnb`, `pip install pytest`, then `python -m pytest tests`.
 
-## Authentication and Database Integration
-This part of the HBnB project marks a significant step towards a robust and production-ready application. This phase is dedicated to securing the API through user authentication and authorization, and transitioning from in-memory storage to a persistent database solution.
+## The four stages
 
-Key Objectives:
-- JWT-based Authentication: Implementing JSON Web Token (JWT) authentication using Flask-JWT-Extended to secure API endpoints, ensuring that only authenticated users can access protected resources and manage their sessions effectively.
+Each folder keeps the state of the project at the end of its stage; `part4` is the final application.
 
-- Role-Based Access Control (RBAC): Introducing granular authorization based on user roles (e.g., distinguishing between regular users and administrators) to restrict access to specific functionalities or data.
+### 1. Technical documentation (`part1`)
 
-- Database Integration with SQLAlchemy: Replacing the temporary in-memory data storage with a persistent database.
+UML diagrams and explanatory notes describing the architecture, the business logic and the interactions between components:
+- a high-level package diagram of the three-layer architecture and its facade;
+- a class diagram of the models and their relationships;
+- sequence diagrams for the main API calls: user registration, place creation, review submission, fetching a list of places, user login.
 
-- SQLite will be utilized for development environments, offering a lightweight and file-based solution.
+### 2. Business logic and API endpoints (`part2`)
 
-- The application will be prepared for seamless configuration with MySQL for robust production deployments.
+The presentation and business-logic layers in Python and Flask, over an in-memory repository:
+- **Business logic:** the core models (User, Place, Review, Amenity), their relationships and data validation;
+- **Presentation:** REST endpoints for each entity with Flask-RESTx (auto-generated Swagger documentation), wired to the business logic through a facade;
+- **Testing and validation:** unit tests of the models and black-box tests of the endpoints.
 
-- Database Schema Design: Designing a comprehensive relational database schema using SQLAlchemy's ORM to accurately map existing entities (Users, Places, Reviews, Amenities) and define their relationships.
+### 3. Authentication and database (`part3`)
 
-- Persistent CRUD Operations: Refactoring all Create, Read, Update, and Delete (CRUD) operations to interact directly with the database, ensuring data consistency, validation, and reliable storage.
+Securing the API and replacing in-memory storage with a database:
+- **Password hashing** with bcrypt, and **JWT authentication** (Flask-JWT-Extended) so that only authenticated users reach protected resources;
+- **Role-based access control:** users can only change their own data; administrators manage users and amenities and can bypass ownership checks;
+- **SQLAlchemy persistence:** an SQLAlchemy repository replaces the in-memory one behind the same interface; users, places, reviews and amenities are mapped with their one-to-many and many-to-many relationships, on SQLite;
+- **SQL scripts** to create the tables and load initial data (`create_tables.sql`, `populate_sample_db.sql`), and entity-relationship diagrams.
 
-This part of the project will significantly enhance the application's security, scalability, and data integrity, making it ready for real-world scenarios.
+![Entity-relationship diagram](part4/hbnb/images/ER_diagram.png)
 
-## Simple Web Client
+### 4. Web client (`part4`)
 
-This part focuses on the devlopment of the application's front-end
-using HTML5, CSS3 and JavaScript ES6.
-This phase is dedicated to the design and implementation of an
-interactive user interface connecting with the back-end services
-developed in previous parts of the project.
+An interactive front end in HTML5, CSS3 and JavaScript (ES6, Fetch API) connected to the API, without page reloads:
+- **Login** against the API, with the JWT stored in a cookie for the session;
+- **List of places** with client-side filtering by price;
+- **Place details**: description, price, amenities and reviews;
+- **Add a review**, for authenticated users only.
 
-Key objectives:
-- User-friendly interface: Develop a user-friendly interface following
-  approppriate design specifications in concordance with the
-  application functionalities.
-- Client-side functionalities: Implement client-side functionality to interact with the back-end API.
-- Efficient data handling: Ensure secure and efficient data handling using JavaScript.
-- Modern dynamic we application: Apply modern web development practices to create a dynamic web application.
+![Place details with reviews](part4/hbnb/images/img_place_review.png)
 
 ## Authors
-- [Delphine Coutouly-Laborda](https://github.com/Delphes1980) (up to **Authentification and Database**)
+
+- [Delphine Coutouly-Laborda](https://github.com/Delphes1980) (stages 1 to 3)
 - [Xavier Laforgue](https://github.com/XavierLaforgue)

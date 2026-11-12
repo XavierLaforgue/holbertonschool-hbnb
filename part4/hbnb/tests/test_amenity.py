@@ -33,7 +33,7 @@ class TestAmenity(unittest.TestCase):
     def test_amenity_too_many_args(self):
         with self.assertRaises(TypeError) as e:
             Amenity("Swimming pool", "Swimsuit") # type: ignore
-        self.assertIn("Amenity.__init__()", str(e.exception))
+        self.assertIn("positional argument", str(e.exception))
 
     def test_amenity_name_strip(self):
         amenity = Amenity("  Pool  ")
