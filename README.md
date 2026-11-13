@@ -4,8 +4,6 @@
 
 A full-stack rental-listing application built in four stages, from UML design to a working web client: a **Flask REST API** with a three-layer architecture, **JWT authentication** and role-based access, **SQLAlchemy** persistence, and a **JavaScript** front end. Pair project for Holberton School (June–July 2025), built over four Scrum sprints.
 
-![Home page listing places](part4/hbnb/images/img_index.png)
-
 | | |
 |---|---|
 | **Back end** | Python 3.13, Flask, Flask-RESTx (Swagger docs), Flask-JWT-Extended, Flask-Bcrypt, SQLAlchemy |
@@ -53,8 +51,6 @@ An interactive front end in HTML5, CSS3 and JavaScript (ES6, Fetch API) connecte
 - **List of places** with client-side filtering by price;
 - **Place details**: description, price, amenities and reviews;
 - **Add a review**, for authenticated users only.
-
-![Place details with reviews](part4/hbnb/images/img_place_review.png)
 
 ## Authors
 
